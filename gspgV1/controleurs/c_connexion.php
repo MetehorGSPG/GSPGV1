@@ -25,6 +25,8 @@ switch ($action)
         }
         break;
     case 'formulaire'         :
+        $_SESSION['stage'] = $_POST['stageop'];
+        $_SESSION['option'] = $_POST['options'];
         include ('vues/v_sommaire.php');
         break;
     case 'deconnexion'        :

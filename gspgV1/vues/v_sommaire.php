@@ -1,16 +1,10 @@
 ﻿ <!-- Division pour le sommaire -->
  <div id="contenu1">
-    <?php $choixStage = $_POST['stageop'];
-      $choixOption = $_POST['options'];  ?>
+    <?php 
+ 
+      ?>
 
     <div id="menuGauche">
-       <div id="infosUtil">
-
-          <h2>
-
-          </h2>
-
-       </div>
        <ul id="menuList">
           <li id="pres">
              Bonjour
@@ -19,15 +13,20 @@
 
           <ul>
              <li>
-                Stage <?= $choixStage ?>
+                Stage <?= $_SESSION['stage'] ?>
              </li>
-             <li> <?= $choixOption ?> </li>
+             <li> <?= $_SESSION['option'] ?> </li>
           </ul>
 
           <br>
           <li class="smenu">
-             <a href="#">
+             <a href="index.php?uc=stages&action=afficherStages">
                 Afficher les stages
+             </a>
+          </li>
+          <li class="smenu">
+             <a href="index.php?uc=stagiaires&action=afficherStagiaires">
+                Afficher les stagiaires
              </a>
           </li>
           <li class="smenu">

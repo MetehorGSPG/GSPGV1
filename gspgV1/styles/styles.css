@@ -12,7 +12,7 @@ body {
 
 #page {
     background-color: white;
-    width: 65%;
+    width: 95%;
     margin: auto;
     border: 0.2em solid black;
     padding: 0.1em;
@@ -72,7 +72,7 @@ body {
 #contenu1 {
     border: none;
     background-color: white;
-    height: 30.5em;
+    /* height: 30em; */
 }
 
 
@@ -128,9 +128,9 @@ ul#menuList a:hover {
 
 #entete h1 {
     margin: 1em;
-    margin-left: 6em;
+    margin-left: 800px;
     font-size: x-large;
-    text-align: center;
+    margin-top: -55px;
 }
 
 #contenu pre {
@@ -158,8 +158,8 @@ ul#menuList a:hover {
 /* Style des formulaires */
 
 .corpsForm {
-    border: solid 0.1em #000;
-    border-bottom-width: 1px;
+    /* border: solid 0.1em #000;
+    border-bottom-width: 1px; */
     margin-bottom: 0em;
     width: 95%;
 }
@@ -289,7 +289,7 @@ taille de caract�res l�g�rement sup�rieure � la normale */
 /* Style pour les lignes d'en-t�te des tableaux */
 
 #contenu th {
-    background-color: #77AADD;
+    background-color: white;
     height: 21px;
     text-align: left;
     vertical-align: top;
@@ -400,10 +400,39 @@ table.listeLegere th.libelle {
 }
 #demande1{
     margin-top:100px;
-}
-#demande2{
-    margin-top:100px;
+    display: flex;
+    justify-content: center;
 }
 #bouttonenvoie{
     margin-top:40px;
+    display: flex;
+    justify-content: center;
+}
+#Titresuivistage{
+    font-family:Arial black bold;
+    font-size:20px;
+    text-align:center;
+    color: darkred;
+    box-decoration-break: slice;
+}
+#Tableau{
+    margin:auto;
+    width:50%;
+    display: flex;
+    justify-content: center;
+}    
+#yd{
+    margin-top:80px;
+    margin-bottom:80px;
+}
+#actionAfficherstage{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+
+}
+#boutonSubmit{
+    margin-top: 20px;
+    display:flex;
+    justify-content:center;
+
 }

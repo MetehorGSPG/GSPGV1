@@ -58,7 +58,9 @@ class PdoGspg
             $ligne= $res->fetch();
             return $ligne;
         }
-	
+
+		// Cas STAGES --------------------------------------------
+
 		public function getStages(){
 			$req = "select id,libelle from stage";
 			$res = self::$monPdo->query($req);
@@ -66,4 +68,59 @@ class PdoGspg
 			return $lignes;
 		}
 
+		public function getVueStages($promotion){
+			$req = "select libelle, dateDebut, dateFin, promotion, numero from stage WHERE promotion ='" . $promotion . "'";
+			$res = self::$monPdo->query($req);
+			$lignes= $res->fetchAll();
+			return $lignes;
+		}
+
+		public function majStages($debut1,$debut2,$fin1,$fin2, $promotion){
+			$req = "update stage set dateDebut ='". $debut1 . "' where promotion ='" . $promotion ."' and numero = '1'";
+            $req2 = "update stage set dateFin ='". $debut2 . "' where promotion ='" . $promotion ."' and numero = '1'";
+            $req3 = "update stage set dateDebut ='". $fin1 . "' where promotion ='" . $promotion ."' and numero = '2'";
+            $req4 = "update stage set dateFin ='". $fin2 . "' where promotion ='" . $promotion ."' and numero = '2'";
+			$res = self::$monPdo->exec($req);
+			$res = self::$monPdo->exec($req2);
+			$res = self::$monPdo->exec($req3);
+			$res = self::$monPdo->exec($req4);
+		}
+
+	
+
+		public function ajouterStages($libelle,$date1,$date2,$promotion,$numero){
+            $req = "insert into stage (libelle,dateDebut,dateFin,promotion,numero) VALUES('$libelle','$date1','$date2','$promotion','$numero')";
+            $res = self::$monPdo->query($req);
+            return $res;
+        }
+
+		// Cas STAGIAIRES --------------------------------------------
+
+		public function getStagiaires(){
+			$req = "select * from stagiaire";
+			$res = self::$monPdo->query($req);
+			$lignes= $res->fetchAll();
+			return $lignes;
+		}
+
+		public function ajouterStagiaires($nom, $prenom, $adresse, $mail, $tel, $promotion, $choixOption){
+            $req = "insert into stagiaire (nom,prenom,adresse,mail,tel,promotion,choixOption) VALUES('$nom','$prenom','$adresse','$mail','$tel','$promotion','$choixOption')";
+            $res = self::$monPdo->query($req);
+            return $res;
+        }
+
+		public function getStagiaireById($id){
+			$req = "select id,nom,prenom,adresse,mail,tel,promotion,choixOption from stagiaire WHERE id ='" . $id . "'";
+			$res = self::$monPdo->query($req);
+			$ligne= $res->fetch();
+			return $ligne;
+		}
+			
+			public function majStagiaires($id,$nom, $prenom, $adresse, $mail, $tel, $promotion, $choixOption)
+			{
+				$req ="update stagiaire set nom = '$nom', prenom = '$prenom', adresse = '$adresse', mail = '$mail', tel = '$tel', promotion = '$promotion', choixOption = '$choixOption' " ;
+				$req .= "where id = '$id'";    
+				$res=  self::$monPdo->exec($req);
+				return $res;
+				}
 } // fin classe
