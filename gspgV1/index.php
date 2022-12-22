@@ -19,5 +19,8 @@ switch($uc){
 	case 'stagiaires' :
 		include("controleurs/c_stagiaires.php");
 		break;
+	case 'entreprises' :
+		include("controleurs/c_entreprises.php");
+		break;
 }
 include("vues/v_pied.php") ;

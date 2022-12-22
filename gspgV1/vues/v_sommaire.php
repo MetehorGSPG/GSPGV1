@@ -30,6 +30,11 @@
              </a>
           </li>
           <li class="smenu">
+             <a href="index.php?uc=entreprises&action=afficherEntreprises">
+                Afficher les entreprises
+             </a>
+          </li>
+          <li class="smenu">
              <a href="index.php?uc=connexion&action=changerStageOuOption" title="changer de stage et/ou d'options">Changer de stage ou d'option</a>
           </li>
           <li class="smenu">
