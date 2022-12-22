@@ -77,12 +77,27 @@ if (isset($_SESSION['admin'])) {  // toujours mettre ce test en début de contro
             $nomTuteurStage = $_REQUEST['nomTuteurStage'];
             $telTuteurStage = $_REQUEST['telTuteurStage'];
             $id = $_REQUEST['id'];
-            $res = $pdo->majEntreprises($id, $nom, $adresse, $ville, $mail, $tel, $nomTuteurStage, $telTuteurStage);
-            if ($res != 0)
-                $message = "Mise à jour effectuée";
-            else
-                $message = "Veuillez réessayer plus tard";
-            include("vues/v_message.php");
+            $ok = 1;
+            $msgErreurs[] = null;
+            if (strlen($tel) != 10) {
+                $msgErreurs[] = "Numero de téléphone de l'entreprise invalide";
+                $ok = 0;
+            }
+            if (strlen($telTuteurStage) != 10) {
+                $msgErreurs[] = "Numero de téléphone du tuteur invalide";
+                $ok = 0;
+            }
+            if ($ok == 0)
+                include("vues/v_erreurs.php");
+
+            else {
+                $res = $pdo->majEntreprises($id, $nom, $adresse, $ville, $mail, $tel, $nomTuteurStage, $telTuteurStage);
+                if ($res != 0)
+                    $message = "Mise à jour effectuée";
+                else
+                    $message = "Veuillez réessayer plus tard";
+                include("vues/v_message.php");
+            }
             include('vues/v_modifierEntreprises.php');
 
             break;

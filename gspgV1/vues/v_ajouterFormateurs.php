@@ -1,10 +1,10 @@
 <div id="titre">
     <h1>
-        <center>Ajout d'un stagiaire</center>
+        <center>Ajout d'un.e format.eur.rice</center>
     </h1>
 </div>
 
-<form method="post" action="index.php?uc=stagiaires&action=enregAjout">
+<form method="post" action="index.php?uc=formateurs&action=enregAjout">
   
     <div id="demande1">
 
@@ -18,13 +18,6 @@
 
         <label>Prenom : </label>
         <input type="text" name="prenom">
-
-    </div>
-
-    <div id="demande1">
-
-        <label>Adresse : </label>
-        <input type="text" name="adresse">
 
     </div>
 
@@ -42,15 +35,6 @@
 
     </div>
 
-    <div id="demande1">
-        <label>Veuillez renseigner la promotion : </label>
-        <input type="text" name="promotion">
-    </div>
-
-    <div id="demande1">
-        <label>Veuillez renseigner l'option du stagiaire : </label>
-        <input type="text" name="choixOption">
-    </div>
     
     <div id="bouttonenvoie">
         <input type="submit" value="Envoyer">

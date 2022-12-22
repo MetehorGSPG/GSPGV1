@@ -137,6 +137,7 @@ class PdoGspg
 		return $res;
 	}
 
+
 	// Cas ENTREPRISES --------------------------------------------
 
 	public function getEntreprises()
@@ -170,4 +171,36 @@ class PdoGspg
 		return $res;
 	}
 
+	// Cas FORMATEURS --------------------------------------------
+
+	public function getFormateurs()
+	{
+		$req = "select * from formateur";
+		$res = self::$monPdo->query($req);
+		$lignes = $res->fetchAll();
+		return $lignes;
+	}
+
+	public function ajouterFormateurs($nom, $prenom, $mail, $tel)
+	{
+		$req = "insert into formateur (nom,prenom,mail,tel) VALUES('$nom', '$prenom', '$mail', '$tel')";
+		$res = self::$monPdo->query($req);
+		return $res;
+	}
+
+	public function getFormateurById($id)
+	{
+		$req = "select id,nom,prenom,mail,tel from formateur WHERE id ='" . $id . "'";
+		$res = self::$monPdo->query($req);
+		$ligne = $res->fetch();
+		return $ligne;
+	}
+
+	public function majFormateurs($id,$nom, $prenom, $mail, $tel)
+	{
+		$req = "update formateur set nom = '$nom', prenom = '$prenom', mail = '$mail', tel = '$tel' ";
+		$req .= "where id = '$id'";
+		$res =  self::$monPdo->exec($req);
+		return $res;
+	}
 } // fin classe
