@@ -1,59 +1,27 @@
-<div id="titre">
+<div id="contenu">
     <h1>
-        <center>Modification d'une entreprise</center>
+        Modification d'une entreprise
     </h1>
-</div>
-
-<form method="post" action="index.php?uc=entreprises&action=enregModif">
-  
-    <div id="demande1">
-
-        <label>Nom : </label>
-        <input type="text" name="nom" value="<?= $nom?>">
-
-    </div>
-
-    <div id="demande1">
-
-        <label>Adresse : </label>
-        <input type="text" name="adresse" value="<?= $adresse?>">
-
-    </div>
-
-    <div id="demande1">
-
-        <label>ville : </label>
-        <input type="text" name="ville" value="<?= $ville?>">
-
-    </div>
-
-    <div id="demande1">
-
-        <label>Adresse Mail : </label>
-        <input type="text" name="mail" value="<?= $mail?>">
-
-    </div>
-    <div id="demande1">
-
-        <label>Numéro de Téléphone : </label>
-        <input type="text" name="tel" value="<?= $tel?>">
-
-    </div>
-
-    <div id="demande1">
-        <label>Veuillez renseigner le nom du tuteur de stage : </label>
-        <input type="text" name="nomTuteurStage" value="<?= $nomTuteurStage?>">
-    </div>
-
-    <div id="demande1">
-        <label>Veuillez renseigner le numéro de télephone du tuteur de stage : </label>
-        <input type="text" name="telTuteurStage" value="<?= $telTuteurStage?>">
-    </div>
-
-    <input type='hidden' name = 'id' size = 7 value='<?= $id ?>'>
-    
-    <div id="bouttonenvoie">
-        <input type="submit" value="Envoyer">
-    </div>
-
+<form method="post" action="index.php?uc=entreprises&action=enregModif" >
+    <div class="corpsForm">
+        <fieldset>
+            <p><label>Nom : </label>
+                <input type="text" name="nom" value="<?= $nom?>">
+            <p><label>Adresse : </label>
+                <input type="text" name="adresse" value="<?= $adresse?>">
+            <p><label>ville : </label>
+                <input type="text" name="ville" value="<?= $ville?>">
+            <p><label>Adresse Mail : </label>
+                <input type="text" name="mail" value="<?= $mail?>">
+            <p><label>Numéro de Téléphone : </label>
+                 <input type="text" name="tel" value="<?= $tel?>">
+            <p><label>Nom du tuteur de stage : </label>
+                <input type="text" name="nomTuteurStage" value="<?= $nomTuteurStage?>">
+            <p><label>Télephone du tuteur de stage : </label>
+            <input type="text" name="telTuteurStage" value="<?= $telTuteurStage?>">
+            <input type='hidden' name = 'id' size = 7 value='<?= $id ?>'>
+        </fieldset>
+    </div><!--fin classForm-->
+    <p><input type="submit" value="Envoyer">
 </form>
+</div> <!--fin contenu-->

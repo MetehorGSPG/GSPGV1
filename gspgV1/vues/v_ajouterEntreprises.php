@@ -1,59 +1,26 @@
-<div id="titre">
+<div id="contenu">
     <h1>
-        <center> Ajout d'une entreprise </center>
+        Ajout d'une entreprise
     </h1>
-</div>
-
-<form method="post" action="index.php?uc=entreprises&action=enregAjout">
-  
-    <div id="demande1">
-
-        <label>Nom de l'entreprise : </label>
-        <input type="text" name="nom">
-
-    </div>
-
-
-    <div id="demande1">
-
-        <label>Adresse de l'entreprise : </label>
-        <input type="text" name="adresse">
-
-    </div>
-
-    <div id="demande1">
-
-        <label>Ville : </label>
-        <input type="text" name="ville">
-
-    </div>
-
-
-    <div id="demande1">
-
-        <label>Adresse Mail : </label>
-        <input type="email" name="mail">
-
-    </div>
-    <div id="demande1">
-
-        <label>Numéro de Téléphone : </label>
-        <input type="text" name="tel">
-
-    </div>
-
-    <div id="demande1">
-        <label>Le nom du tuteur de stage : </label>
-        <input type="text" name="nomTuteurStage">
-    </div>
-
-    <div id="demande1">
-        <label>Téléphone du tuteur de stage : </label>
-        <input type="text" name="telTuteurStage">
-    </div>
-    
-    <div id="bouttonenvoie">
-        <input type="submit" value="Envoyer">
-    </div>
-
-</form>
+<form method="post" action="index.php?uc=entreprises&action=enregAjout" >
+    <div class="corpsForm">
+        <fieldset>
+            <p><label>Nom de l'entreprise : </label>
+                <input type="text" name="nom">
+            <p><label>Adresse de l'entreprise : </label>
+                <input type="text" name="adresse">
+            <p><label>Ville : </label>
+                <input type="text" name="ville">
+            <p><label>Adresse mail : </label>
+                <input type="text" name="mail">
+            <p><label>Numéro de télephone : </label>
+                 <input type="text" name="tel">
+            <p><label>Nom du tuteur de stage : </label>
+                 <input type="text" name="nomTutuerStage">
+            <p><label>Numéro du tuteur de stage : </label>
+                 <input type="text" name="telTuteurStage">
+        </fieldset>
+    </div><!--fin classForm-->
+   <center> <p><input type="submit" value="Envoyer"></center>
+        </form>
+</div> <!--fin contenu-->

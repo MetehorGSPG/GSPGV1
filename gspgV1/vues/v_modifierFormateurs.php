@@ -1,43 +1,21 @@
-<div id="titre">
+<div id="contenu">
     <h1>
-        <center>Modification d'un formateur</center>
+        Modification d'un.e format.eur.rice
     </h1>
-</div>
-
-<form method="post" action="index.php?uc=formateurs&action=enregModif">
-  
-    <div id="demande1">
-
-        <label>Nom : </label>
-        <input type="text" name="nom" value="<?= $nom?>">
-
-    </div>
-
-    <div id="demande1">
-
-        <label>Prenom : </label>
-        <input type="text" name="prenom" value="<?= $prenom?>">
-
-    </div>
-
-
-    <div id="demande1">
-
-        <label>Adresse Mail : </label>
-        <input type="email" name="mail" value="<?= $mail?>">
-
-    </div>
-    <div id="demande1">
-
-        <label>Numéro de Téléphone : </label>
-        <input type="text" name="tel" value="<?= $tel?>">
-
-    </div>
-
-    <input type='hidden' name = 'id' size = 7 value='<?= $id ?>'>
-    
-    <div id="bouttonenvoie">
-        <input type="submit" value="Envoyer">
-    </div>
-
-</form>
+<form method="post" action="index.php?uc=formateurs&action=enregModif" >
+    <div class="corpsForm">
+        <fieldset>
+            <p><label>Nom : </label>
+                <input type="text" name="nom" value="<?= $nom?>">
+            <p><label>Prénom : </label>
+                <input type="text" name="prenom" value="<?= $prenom?>">
+            <p><label>Adresse mail : </label>
+                <input type="text" name="mail" value="<?= $mail?>">
+            <p><label>Numéro de téléphone : </label>
+                <input type="text" name="tel" value="<?= $tel?>">
+            <input type='hidden' name = 'id' size = 7 value='<?= $id ?>'>
+        </fieldset>
+    </div><!--fin classForm-->
+   <center> <p><input type="submit" value="Envoyer"></center>
+        </form>
+</div> <!--fin contenu-->

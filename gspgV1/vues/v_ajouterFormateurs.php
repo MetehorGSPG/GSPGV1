@@ -1,43 +1,20 @@
-<div id="titre">
+<div id="contenu">
     <h1>
-        <center>Ajout d'un.e format.eur.rice</center>
+        Ajout d'un.e format.eur.rice
     </h1>
-</div>
-
-<form method="post" action="index.php?uc=formateurs&action=enregAjout">
-  
-    <div id="demande1">
-
-        <label>Nom : </label>
-        <input type="text" name="nom">
-
-    </div>
-
-
-    <div id="demande1">
-
-        <label>Prenom : </label>
-        <input type="text" name="prenom">
-
-    </div>
-
-
-    <div id="demande1">
-
-        <label>Adresse Mail : </label>
-        <input type="email" name="mail">
-
-    </div>
-    <div id="demande1">
-
-        <label>Numéro de Téléphone : </label>
-        <input type="text" name="tel">
-
-    </div>
-
-    
-    <div id="bouttonenvoie">
-        <input type="submit" value="Envoyer">
-    </div>
-
-</form>
+<form method="post" action="index.php?uc=formateurs&action=enregModif" >
+    <div class="corpsForm">
+        <fieldset>
+            <p><label>Nom : </label>
+                <input type="text" name="nom">
+            <p><label>Prénom : </label>
+                <input type="text" name="prenom">
+            <p><label>Adresse mail : </label>
+                <input type="text" name="mail">
+            <p><label>Numéro de téléphone : </label>
+                <input type="text" name="tel">
+        </fieldset>
+    </div><!--fin classForm-->
+   <center> <p><input type="submit" value="Envoyer"></center>
+        </form>
+</div> <!--fin contenu-->

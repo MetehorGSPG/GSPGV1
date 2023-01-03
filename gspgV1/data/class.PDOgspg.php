@@ -83,11 +83,11 @@ class PdoGspg
 		return $lignes;
 	}
 
-	public function majStages($debut1, $debut2, $fin1, $fin2, $promotion)
+	public function majStages($debut1, $fin1, $debut2, $fin2, $promotion)
 	{
 		$req = "update stage set dateDebut ='" . $debut1 . "' where promotion ='" . $promotion . "' and numero = '1'";
-		$req2 = "update stage set dateFin ='" . $debut2 . "' where promotion ='" . $promotion . "' and numero = '1'";
-		$req3 = "update stage set dateDebut ='" . $fin1 . "' where promotion ='" . $promotion . "' and numero = '2'";
+		$req2 = "update stage set dateFin ='" . $fin1 . "' where promotion ='" . $promotion . "' and numero = '1'";
+		$req3 = "update stage set dateDebut ='" . $debut2 . "' where promotion ='" . $promotion . "' and numero = '2'";
 		$req4 = "update stage set dateFin ='" . $fin2 . "' where promotion ='" . $promotion . "' and numero = '2'";
 		$res = self::$monPdo->exec($req);
 		$res = self::$monPdo->exec($req2);
@@ -203,4 +203,53 @@ class PdoGspg
 		$res =  self::$monPdo->exec($req);
 		return $res;
 	}
+
+	// Cas stageStagiaire (conventions)
+
+	public function getConventions()
+	{
+		$req = "select * from stageStagiaire";
+		$res = self::$monPdo->query($req);
+		$lignes = $res->fetchAll();
+		return $lignes;
+	}
+
+	public function stagiaireConventions($libelle,$option)
+	{
+		$req = "SELECT stageStagiaire.id AS id,nom, prenom from stagiaire, stageStagiaire, stage WHERE stagiaire.id = stageStagiaire.idStagiaire and stageStagiaire.idStage = stage.id and stage.id = '$libelle' and stagiaire.choixOption = '$option'";
+		$res = self::$monPdo->query($req);
+		$lignes = $res->fetchAll();
+		return $lignes;
+	}
+
+	public function stagiaireSansConventions($promotion, $libelle, $option){
+		$req = "select stagiaire.id,stagiaire.nom,stagiaire.prenom FROM stagiaire WHERE promotion = '$promotion' and stagiaire.choixOption = '$option' and stagiaire.id not in (select stagestagiaire.idStagiaire from stagestagiaire, stage where stagestagiaire.idStage = stage.id and stage.id ='$libelle')";
+		$res = self::$monPdo->query($req);
+		$lignes = $res->fetchAll();
+		return $lignes;
+	}
+
+	public function getConventionById($id)
+	{
+		$req = "select id,idStagiaire,idEntreprise,idFormateur,idStage from stageStagiaire WHERE id ='" . $id . "'";
+		$res = self::$monPdo->query($req);
+		$ligne = $res->fetch();
+		return $ligne;
+	}
+
+	public function ajouterConvention($idStagiaire,$idEntreprise,$idFormateur,$idStage)
+	{
+		$req = "insert into stageStagiaire (idStagiaire,idEntreprise,idFormateur,idStage) VALUES('$idStagiaire', '$idEntreprise', '$idFormateur', '$idStage')";
+		$res = self::$monPdo->query($req);
+		var_dump($req);
+		return $res;
+	}
+
+	// public function existeConvention(){
+    //     $req = "select idStagiaire from stageStagiaire";
+    //     $res = self::$monPdo->query($req);
+    //     $lignes = $res->fetchAll();
+    //     return $lignes;
+    // }
+
 } // fin classe

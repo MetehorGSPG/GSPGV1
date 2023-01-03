@@ -35,12 +35,15 @@ if (isset($_SESSION['admin'])) {  // toujours mettre ce test en début de contro
                 $msgErreurs[] = "Promotion non conforme";
                 $ok = 0;
             }
+            if (strlen($tel) != 10) {
+                $msgErreurs[] = "Numero de téléphone du stagiaire invalide";
+                $ok = 0;
+            }
             if ($ok == 0)
                 include("vues/v_erreurs.php");
 
             else {
                 $res = $pdo->ajouterStagiaires($nom, $prenom, $adresse, $mail, $tel, $promotion, $choixOption);
-
                 if ($res != 0)
                     $message = "Stagiaire ajouté";
                 else
@@ -85,6 +88,10 @@ if (isset($_SESSION['admin'])) {  // toujours mettre ce test en début de contro
             }
             if (strlen($promotion) != 4) {
                 $msgErreurs[] = "Promotion non conforme";
+                $ok = 0;
+            }
+            if (strlen($tel) != 10) {
+                $msgErreurs[] = "Numero de téléphone du stagiaire invalide";
                 $ok = 0;
             }
             if ($ok == 0)

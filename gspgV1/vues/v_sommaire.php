@@ -20,6 +20,11 @@
 
           <br>
           <li class="smenu">
+             <a href="index.php?uc=conventions&action=afficherConventions">
+                Afficher les conventions
+             </a>
+          </li>
+          <li class="smenu">
              <a href="index.php?uc=stages&action=afficherStages">
                 Afficher les stages
              </a>

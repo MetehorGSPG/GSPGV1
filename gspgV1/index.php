@@ -25,5 +25,8 @@ switch($uc){
 	case 'formateurs'  :
 		include("controleurs/c_formateurs.php");
 		break;
+	case 'conventions' :
+		include("controleurs/c_conventions.php");
+		break;
 }
 include("vues/v_pied.php") ;

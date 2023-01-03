@@ -19,7 +19,7 @@ switch ($action)
         }
         else{
             $_SESSION['admin'] = $login;
-             $stages = $pdo->getStages();
+            $stages = $pdo->getStages();
             //  var_dump($stages);
             include ('vues/v_stageOption.php');    
         }

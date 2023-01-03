@@ -14,15 +14,16 @@ if (isset($_SESSION['admin'])) {  // toujours mettre ce test en début de contro
             break;
 
         case 'majStages':
+            include('vues/v_sommaire.php');
             $annee = date('Y');
+            $stages = $pdo->getVueStages($annee);
             $promotion = $_REQUEST['promotion'];
             $debut1 = $_REQUEST['dateDebut1'];
             $fin1 = $_REQUEST['dateFin2'];
             $debut2 = $_REQUEST['dateDebut3'];
             $fin2 = $_REQUEST['dateFin4'];
-            $pdo->majStages($debut1, $debut2, $fin1, $fin2, $promotion);
-            include('vues/v_sommaire.php');
-            $stages = $pdo->getVueStages($annee);
+            $pdo->majStages($debut1, $fin1, $debut2, $fin2, $promotion);
+            
             include("vues/v_stages.php");
             break;
 
