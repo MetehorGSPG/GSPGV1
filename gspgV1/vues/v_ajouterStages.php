@@ -7,9 +7,9 @@
         <fieldset>
             <p><label>Libelle : </label>
                 <input type="text" name="libelle" >
-            <p><label>Date de début de stage  : </label>
+            <p><label>Date de début du stage  : </label>
                 <input type="text" name="dateDebut">
-            <p><label>Date de fin de stage : </label>
+            <p><label>Date de fin du stage : </label>
                 <input type="text" name="dateFin">
             <p><label>Promotion : </label>
                 <input type="text" name="promotion">
